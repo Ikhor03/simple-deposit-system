@@ -1,0 +1,1002 @@
+{
+	"info": {
+		"_postman_id": "47320ade-36b7-4ba8-96f6-90c62cea3476",
+		"name": "B2C Disburse STG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32237628",
+		"_collection_link": "https://team247uk.postman.co/workspace/Carat-B2C-Wallet~434831e8-201d-4f49-b5ef-2dad8752fd16/collection/32237628-47320ade-36b7-4ba8-96f6-90c62cea3476?action=share&source=collection_link&creator=32237628"
+	},
+	"item": [
+		{
+			"name": "Info",
+			"item": [
+				{
+					"name": "list channels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{result_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-CLIENT-KEY",
+								"value": "{{partnerId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/info/channels",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"info",
+								"channels"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/channel",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"channel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "468"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d4-Ftf/6lETfCh/fbtTOr2xwotuDt0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jul 2025 05:38:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request successful\",\n    \"result\": [\n        {\n            \"id\": \"CH-NOBU-01\",\n            \"name\": \"Interbank NOBU\",\n            \"label\": \"Transfer from NOBU to Other Bank\",\n            \"type\": \"bank\",\n            \"createdAt\": \"2025-05-30T03:34:27.619Z\",\n            \"availablePayMethod\": [\"VA\", \"BANK\"]\n        },\n        {\n            \"id\": \"CH-E2P-01\",\n            \"name\": \"VA Permata 1\",\n            \"label\": \"Transfer from VA Permata Bank\",\n            \"type\": \"bank\",\n            \"createdAt\": \"2025-06-10T06:14:36.799Z\"\n        },\n        {\n            \"id\": \"CH-E2P-02\",\n            \"name\": \"VA Permata 2\",\n            \"label\": \"Transfer from VA Permata Bank 2\",\n            \"type\": \"bank\",\n            \"createdAt\": \"2025-06-10T06:14:36.799Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "list bank",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{result_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-CLIENT-KEY",
+								"value": "{{partnerId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/info/banks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"info",
+								"banks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{result_access_token}}",
+										"type": "text"
+									},
+									{
+										"key": "X-CLIENT-KEY",
+										"value": "{{partnerId}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/info/banks",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"info",
+										"banks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"90-Z1YSjzyK6oJE6iSLqP2VEnoOGo0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Aug 2025 10:50:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request successful\",\n    \"result\": [\n        {\n            \"id\": 1,\n            \"bankName\": \"BNI\",\n            \"bankCode\": \"009\"\n        },\n        {\n            \"id\": 2,\n            \"bankName\": \"BRI\",\n            \"bankCode\": \"002\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.environment.set('result_access_token', jsonData.result.token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CLIENT-KEY",
+						"value": "{{partnerId}}",
+						"type": "text"
+					},
+					{
+						"key": "X-SIGNATURE",
+						"value": "{{signature}}",
+						"type": "text"
+					},
+					{
+						"key": "X-TIMESTAMP",
+						"value": "{{timestamp}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/auth/access-token",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"access-token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CLIENT-KEY",
+								"value": "{{partnerId}}",
+								"type": "text"
+							},
+							{
+								"key": "X-SIGNATURE",
+								"value": "{{result_signature_auth}}",
+								"type": "text"
+							},
+							{
+								"key": "X-TIMESTAMP",
+								"value": "{{auth_timestamp}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/access-token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"access-token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "214"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d6-PlWFlzjRKodzN8q39qtE1BIDf2E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Jul 2025 09:23:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Request successful\",\n    \"result\": {\n        \"token\": \"13ed900b53c1d4cc59840fbe677690cd86bb32968fb2d4816d9a36af8428b1bc8dfd5c5b05ea3e627f6d43b8f0259dadae7502a76654c62572feb6279a494b12\",\n        \"expiresIn\": 3600\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Transfer Inquiry",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.environment.set(\"inquiry_id\", jsonData.result.inquiryId);",
+							"pm.environment.set(\"bank_acc_name\", jsonData.result.destinationAccName);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{result_access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-KEY",
+						"value": "{{partnerId}}",
+						"type": "text"
+					},
+					{
+						"key": "X-TIMESTAMP",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "X-SIGNATURE",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"destinationAccountNumber\": \"{{bank_acc_num}}\",\n    \"destinationBankCode\": \"{{bank_code}}\",\n    \"amount\": {{amount_trx}},\n    \"merchantId\": \"{{merchantId}}\",\n    \"channelId\": \"{{channelId}}\",\n    \"partnerReferenceNo\": \"{{partner_ref_no}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/transaction/transfer-inquiry",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"transaction",
+						"transfer-inquiry"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok fp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{result_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-CLIENT-KEY",
+								"value": "{{partnerId}}",
+								"type": "text"
+							},
+							{
+								"key": "X-TIMESTAMP",
+								"value": "2025-08-11T04:26:26.572Z",
+								"type": "text"
+							},
+							{
+								"key": "X-SIGNATURE",
+								"value": "iqJ40TdQYgzkx71FpyYrsA8mkdiacnxkICxJfnPQqcb97YNzpUokf8YSqJSvjx7NcV9Ep4K/I3foAqN/RjcSgWtyqHozXX0CIpD/U7941I3bbcu/7gZkXhR5Aie7Q1eCjd2lq1Wmfb48Dy3nNzj4IIwKfyXiwasW2WwxuIaSV7zsgd+J+yU57g2XAO0FJDjHVVrfMsT7eDPFP44bg4C848nMmVuKHndfuduT6isscyZtg/JC4HT/4dQGBDVjk/Gv7pP+0WMnRKv/Skjwq5w0M/SXfACvycQszB+SYNDtsfPEZcHgTVURNF/xAxKBugOCWJZrc8s4NROIshzMOlsWkA==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"destinationAccountNumber\": \"5432154321\",\n    \"destinationBankCode\": \"014\",\n    \"amount\": 10000,\n    \"merchantId\": \"A4QZ\",\n    \"channelId\": \"CH-FRP-01\",\n    \"partnerReferenceNo\": \"ts-out-07\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transaction/transfer-inquiry",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transaction",
+								"transfer-inquiry"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "204"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cc-Tm2difEBIIlwJH3tHE3AQrwYdJA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 04:27:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Request successful\",\n    \"result\": {\n        \"inquiryId\": \"ec449431-adf1-445f-afbd-d5c2aa7e0e1f\",\n        \"destinationAccNumber\": \"5432154321\",\n        \"destinationAccName\": \"Henda Sujiadi\",\n        \"desc\": \"SUCCESS - 00\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Transfer out",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonBody = pm.response.json();",
+							"pm.environment.set(\"transaction_id\", jsonBody.result.transactionId);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{result_access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-KEY",
+						"value": "{{partnerId}}",
+						"type": "text"
+					},
+					{
+						"key": "X-TIMESTAMP",
+						"value": "{{timestamp}}",
+						"type": "text"
+					},
+					{
+						"key": "X-SIGNATURE",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"destinationAccountNumber\": \"{{bank_acc_num}}\",\n    \"destinationAccountName\": \"{{bank_acc_name}}\",\n    \"destinationBankCode\": \"{{bank_code}}\",\n    \"amount\": {{amount_trx}},\n    \"merchantId\": \"{{merchantId}}\",\n    \"channelId\": \"{{channelId}}\",\n    \"partnerReferenceNo\": \"{{partner_ref_no}}\",\n    \"inquiryId\": \"{{inquiry_id}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/transaction/transfer-out",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"transaction",
+						"transfer-out"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{result_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-CLIENT-KEY",
+								"value": "{{partnerId}}",
+								"type": "text"
+							},
+							{
+								"key": "X-TIMESTAMP",
+								"value": "{{timestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "X-SIGNATURE",
+								"value": "{{signature}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{raw_body_sign_trx}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transaction/transfer-out",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transaction",
+								"transfer-out"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "387"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"183-neretF6KvmOTitYDLC1ti/Pw7HY\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Aug 2025 07:35:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Request successful\",\n    \"result\": {\n        \"destinationAccountNumber\": \"5432154321\",\n        \"destinationAccountName\": \"null\",\n        \"destinationBankCode\": \"014\",\n        \"amount\": 11000,\n        \"merchantId\": \"A4QZ\",\n        \"channelId\": \"CH-E2P-01\",\n        \"inquiryId\": \"7648e884-70c9-41cd-9e80-032940b55abc\",\n        \"partnerReferenceNo\": \"PAT-d3fb136a-8366-41c2-9a6b-282c281f841f\",\n        \"transactionId\": \"84508fee-c7e3-4b9d-81fb-e1f8f5b13868\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "check status transaction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{result_access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-KEY",
+						"value": "{{partnerId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/transaction/status/{{transaction_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"transaction",
+						"status",
+						"{{transaction_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{result_access_token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-CLIENT-KEY",
+								"value": "{{partnerId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/transaction/status/{{transaction_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transaction",
+								"status",
+								"{{transaction_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-8oZP4CML9LEsYCwbSk8rt74xFpU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Aug 2025 09:59:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Request successful\",\n    \"result\": {\n        \"statusTrx\": \"\",\n        \"id\": \"83234a9d-d1ac-4787-b58f-b21667136a1c\",\n        \"merchantId\": \"A4QZ\",\n        \"amount\": \"11000\",\n        \"type\": \"debit\",\n        \"destinationAccountNumber\": \"5432154321\",\n        \"destinationBankCode\": \"014\",\n        \"partnerReferenceNo\": \"PAT-c9dd98fd-65b5-4465-9a69-aa77669851b7\",\n        \"channelId\": \"CH-FRP-02\",\n        \"walletId\": \"8a08925f-473c-4f94-8117-a81829b99d41\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{result_access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-KEY",
+						"value": "{{partnerId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/wallet/balance?merchantId={{merchantId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wallet",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "merchantId",
+							"value": "{{merchantId}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/wallet/balance?merchantId=AFM1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"wallet",
+								"balance"
+							],
+							"query": [
+								{
+									"key": "merchantId",
+									"value": "AFM1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8d-0cGyL+SSjbAXADqvsCg914ie35A\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Jul 2025 05:39:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Request successful\",\n    \"result\": {\n        \"id\": \"409f3274-16dc-4538-9e07-1aef371d3ad8\",\n        \"merchantId\": \"AFM1\",\n        \"balance\": \"250000\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get journal",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{result_access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "X-CLIENT-KEY",
+						"value": "{{partnerId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/wallet/journal?limit=3&page=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wallet",
+						"journal"
+					],
+					"query": [
+						{
+							"key": "walletId",
+							"value": "7289d5bc-e987-48dc-a67e-ab78fc30c71c",
+							"disabled": true
+						},
+						{
+							"key": "entryType",
+							"value": "debit",
+							"disabled": true
+						},
+						{
+							"key": "startDate",
+							"value": "2025-08-08T07:51:05.959Z",
+							"disabled": true
+						},
+						{
+							"key": "endDate",
+							"value": "2025-08-09T23:51:05.959Z",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3",
+							"description": "default 50"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "order",
+							"value": "desc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/wallet/journal?merchantId=A4QZ",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"wallet",
+								"journal"
+							],
+							"query": [
+								{
+									"key": "merchantId",
+									"value": "A4QZ"
+								},
+								{
+									"key": "entryType",
+									"value": "debit",
+									"disabled": true
+								},
+								{
+									"key": "startDate",
+									"value": "2025-08-08T07:51:05.959Z",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2025-08-09T23:51:05.959Z",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "default 50",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "815"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32f-H8aM0PHlVDnY8T6MYxKcU5qxDEM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 10 Aug 2025 04:49:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Wallet journal entries retrieved successfully\",\n    \"result\": [\n        {\n            \"id\": \"feca2d64-fa21-4341-85a6-8f7ab49a7592\",\n            \"disbcWalletId\": \"0678d4dd-7137-412a-b57b-38253146e2aa\",\n            \"disbcTransactionId\": \"b93f0bdd-7dd3-4e4a-992a-edd20a70fd36\",\n            \"entryType\": \"debit\",\n            \"amount\": \"10000\",\n            \"balanceBefore\": \"945000\",\n            \"balanceAfter\": \"935000\",\n            \"description\": \"transfer out api\",\n            \"referenceNo\": \"ts-out-04\",\n            \"createdAt\": \"2025-08-09T07:51:57.377Z\",\n            \"merchantId\": \"A4QZ\"\n        },\n        {\n            \"id\": \"310ce817-62b7-4a3c-8f6b-dddf87b4ee77\",\n            \"disbcWalletId\": \"0678d4dd-7137-412a-b57b-38253146e2aa\",\n            \"disbcTransactionId\": \"309d48d6-83d0-4e7d-9af6-11b7149e7f3e\",\n            \"entryType\": \"debit\",\n            \"amount\": \"15000\",\n            \"balanceBefore\": \"960000\",\n            \"balanceAfter\": \"945000\",\n            \"description\": \"transfer out api\",\n            \"referenceNo\": \"ts-out-03\",\n            \"createdAt\": \"2025-08-09T07:51:05.959Z\",\n            \"merchantId\": \"A4QZ\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.headers.add(",
+					"    {key: 'x-forwarded-for', value: '104.28.213.125'}",
+					");",
+					"// pm.request.headers['x-forwarded-for'] = '104.28.213.125';"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "demo-deposit",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "B2C Deposit System",
+  "dependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "lucide-react": "^0.541.0",
+    "next": "^15.5.0",
+    "postcss-load-config": "^6.0.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^4.1.12"
+  }
+}
