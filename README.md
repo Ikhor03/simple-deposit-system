@@ -1,4 +1,4 @@
-# B2C Deposit System
+# Deposit System
 
 A simple fullstack deposit system built with NextJS and Axios for B2C disbursement transactions.
 
@@ -38,8 +38,8 @@ A simple fullstack deposit system built with NextJS and Axios for B2C disburseme
 The system supports three environments:
 
 - **Development**: Pre-configured with test credentials
+- **Staging**: Requires your staging credentials
 - **Production**: Requires your production credentials
-- **Custom**: Fully customizable environment
 
 You can switch environments using the dropdown in the header.
 
