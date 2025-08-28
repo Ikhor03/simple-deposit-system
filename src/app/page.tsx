@@ -276,7 +276,7 @@ export default function Home() {
                     <div className="flex items-center space-x-3">
                       <div className={`w-2 h-2 rounded-full ${entry.type === 'debit' ? 'bg-red-400' : 'bg-green-400'}`} />
                       <div>
-                        <p className="text-sm font-medium text-gray-900">{entry.description}</p>
+                        <p className="text-sm font-medium text-gray-900">{entry.description} ({entry.channelId})</p>
                         <p className="text-xs text-gray-500">{new Date(entry.createdAt).toLocaleDateString()}</p>
                       </div>
                     </div>
