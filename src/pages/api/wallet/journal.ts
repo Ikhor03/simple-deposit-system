@@ -15,6 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const environment = getEnvironmentConfig(environmentKey);
+    console.log(`Journal API - Loading environment for key: ${environmentKey}`, environment);
     
     if (!environment) {
       return res.status(400).json({ error: 'Invalid environment key' });

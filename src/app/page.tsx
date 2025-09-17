@@ -13,13 +13,14 @@ import {
 } from 'lucide-react';
 import axios from 'axios';
 import { Bank, Channel, Balance, JournalEntry, TransactionStatus } from '@/types';
-import { ENVIRONMENT_OPTIONS } from '@/config/default-env';
+import { ENVIRONMENT_OPTIONS, getEnvironmentConfig } from '@/config/default-env';
 
 export default function Home() {
   const [currentEnv, setCurrentEnv] = useState<keyof typeof ENVIRONMENT_OPTIONS>('dev');
   const [activeTab, setActiveTab] = useState('dashboard');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [envConfig, setEnvConfig] = useState<{partnerId?: string, merchantId?: string} | null>(null);
   
   // Data states
   const [balance, setBalance] = useState<Balance[]>([]);
@@ -38,6 +39,16 @@ export default function Home() {
   });
   const [statusSearchId, setStatusSearchId] = useState('');
   const [inquiryResult, setInquiryResult] = useState<any>(null);
+
+  // Function to get current environment info
+  const getCurrentEnvInfo = async () => {
+    try {
+      const response = await axios.post('/api/info/environment', { environmentKey: currentEnv });
+      setEnvConfig(response.data.result);
+    } catch (err) {
+      console.error('Failed to get environment info:', err);
+    }
+  };
 
   // Environment is now handled server-side, no need for client-side environment state
 
@@ -72,6 +83,9 @@ export default function Home() {
       if (journalRes.meta) {
         setJournalMeta(journalRes.meta);
       }
+      
+      // Also load environment info
+      await getCurrentEnvInfo();
     } catch (err) {
       console.error('Failed to load initial data:', err);
     }
@@ -161,6 +175,11 @@ export default function Home() {
     }
   };
 
+  // Load environment info when environment changes
+  useEffect(() => {
+    getCurrentEnvInfo();
+  }, [currentEnv]);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -169,8 +188,24 @@ export default function Home() {
           <div className="flex justify-between items-center py-4">
             <h1 className="text-2xl font-bold text-gray-900">B2C Deposit Demo</h1>
             
-            {/* Environment Selector */}
+            {/* Environment Selector and Info */}
             <div className="flex items-center space-x-4">
+              {/* Environment Info Display */}
+              {envConfig && (
+                <div className="bg-gray-50 border border-gray-200 rounded-md px-3 py-2 text-sm">
+                  <div className="flex items-center space-x-4 text-gray-700">
+                    <div className="flex items-center space-x-1">
+                      <span className="font-medium">Partner ID:</span>
+                      <span className="font-mono text-blue-600">{envConfig.partnerId}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <span className="font-medium">Merchant ID:</span>
+                      <span className="font-mono text-green-600">{envConfig.merchantId}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               <select
                 value={currentEnv}
                 onChange={(e) => setCurrentEnv(e.target.value as keyof typeof ENVIRONMENT_OPTIONS)}

@@ -226,6 +226,7 @@ class ApiClient {
       params: {
         limit: params.limit || 10,
         page: params.page || 1,
+        merchantId: this.environment.merchantId,
         ...params,
       },
     });
