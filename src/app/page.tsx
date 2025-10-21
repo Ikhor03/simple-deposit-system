@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import axios from 'axios';
 import { Bank, Channel, Balance, JournalEntry, TransactionStatus } from '@/types';
-import { ENVIRONMENT_OPTIONS, getEnvironmentConfig } from '@/config/default-env';
+import { ENVIRONMENT_OPTIONS } from '@/config/default-env';
 
 export default function Home() {
   const [currentEnv, setCurrentEnv] = useState<keyof typeof ENVIRONMENT_OPTIONS>('dev');
@@ -168,6 +168,7 @@ export default function Home() {
   };
 
   const getStatusIcon = (status: string) => {
+    console.log(status)
     switch (status.toLowerCase()) {
       case 'success': return <CheckCircle className="w-5 h-5 text-green-500" />;
       case 'failed': return <XCircle className="w-5 h-5 text-red-500" />;

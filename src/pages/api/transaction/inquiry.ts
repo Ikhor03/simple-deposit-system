@@ -14,19 +14,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'Environment key is required' });
     }
 
-    console.log('Transfer Inquiry API - Loading environment for key:', environmentKey);
     const environment = getEnvironmentConfig(environmentKey);
     
     if (!environment) {
       return res.status(400).json({ error: 'Invalid environment key' });
     }
-
-    console.log('Transfer Inquiry API - Environment loaded:', {
-      name: environment.name,
-      partnerId: environment.partnerId,
-      privateKeyExists: !!environment.privateKey,
-      privateKeyLength: environment.privateKey?.length || 0
-    });
 
     const apiClient = new ApiClient(environment);
     const result = await apiClient.transferInquiry(transferData);

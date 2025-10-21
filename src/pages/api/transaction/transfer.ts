@@ -14,7 +14,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'Environment key is required' });
     }
 
-    console.log('Transfer API - Loading environment for key:', environmentKey);
     const environment = getEnvironmentConfig(environmentKey);
     
     if (!environment) {
